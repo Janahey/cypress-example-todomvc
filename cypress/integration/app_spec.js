@@ -46,9 +46,7 @@ describe('TodoMVC - React', function () {
 
   // a very simple example helpful during presentations
   it('adds 2 todos', function () {
-    cy.get('.new-todo')
-    .type('learn testing{enter}')
-    .type('be cool{enter}')
+    cy.get('.new-todo').type('hond uitlaten{enter}').type('bot kopen{enter}')
     cy.get('.todo-list li').should('have.length', 2)
   })
 
@@ -63,7 +61,7 @@ describe('TodoMVC - React', function () {
   })
 
   context('No Todos', function () {
-    it('should hide #main and #footer', function () {
+    it.only('should hide #main and #footer', function () {
       // Unlike the TodoMVC tests, we don't need to create
       // a gazillion helper functions which are difficult to
       // parse through. Instead we'll opt to use real selectors
